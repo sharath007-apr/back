@@ -1,0 +1,30 @@
+{
+  "name": "rate-limiter-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:ui\"",
+    "dev:server": "node --env-file-if-exists=.env --watch server/index.js",
+    "dev:ui": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "test": "node --test server/*.test.js",
+    "setup": "npm install"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.5"
+  }
+}
